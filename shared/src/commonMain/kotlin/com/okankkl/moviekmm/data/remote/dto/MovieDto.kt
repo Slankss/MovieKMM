@@ -12,5 +12,4 @@ internal data class MovieDto(
     var posterImage : String,
     @SerialName("release_date")
     var releaseDate : String
-
 )

@@ -45,4 +45,15 @@ dependencies {
     implementation(libs.compose.material3)
     implementation(libs.androidx.activity.compose)
     debugImplementation(libs.compose.ui.tooling)
+
+
+    implementation("io.insert-koin:koin-androidx-compose:${libs.versions.koinComposeVersion.get()}")
+    implementation("io.coil-kt:coil-compose:${libs.versions.coilVersion.get()}")
+    implementation("com.google.accompanist:accompanist-systemuicontroller:${libs.versions.accompanistVersion.get()}")
+    implementation("androidx.navigation:navigation-compose:${libs.versions.navVersion}")
+    implementation ("androidx.swiperefreshlayout:swiperefreshlayout:1.2.0-alpha01")
+    implementation ("androidx.compose.material:material:1.6.5")
+
+
+
 }

@@ -2,6 +2,7 @@ package com.okankkl.moviekmm.domain.usecase
 
 import com.okankkl.moviekmm.domain.model.Movie
 import com.okankkl.moviekmm.domain.repository.MovieRepository
+import io.github.aakira.napier.Napier
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 

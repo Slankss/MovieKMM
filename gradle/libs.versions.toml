@@ -8,6 +8,11 @@ androidx-activityCompose = "1.8.0"
 coroutines = "1.6.4"
 ktor = "2.2.1"
 koin = "3.3.2"
+koinComposeVersion = "3.4.1"
+coilVersion = "2.2.2"
+accompanistVersion = "0.28.0"
+navVersion = "2.5.3"
+napierVersion = "2.7.1"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }

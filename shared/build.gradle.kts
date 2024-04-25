@@ -35,10 +35,12 @@ kotlin {
                 implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:${libs.versions.coroutines.get()}")
                 implementation("io.ktor:ktor-client-core:${libs.versions.ktor.get()}")
                 implementation("io.ktor:ktor-client-content-negotiation:${libs.versions.ktor.get()}")
-                implementation("io.ktor:ktor-serialization-kotlinx-json:${libs.versions.ktor.get()}")
+                implementation ("io.ktor:ktor-serialization-kotlinx-json:${libs.versions.ktor.get()}")
 
+                implementation ("io.github.aakira:napier:${libs.versions.napierVersion.get()}")
                 //Use api so that the android app can use it as well
                 api("io.insert-koin:koin-core:${libs.versions.koin.get()}")
+
             }
         }
         val commonTest by getting {

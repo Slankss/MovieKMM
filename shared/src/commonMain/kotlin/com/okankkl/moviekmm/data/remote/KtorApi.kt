@@ -23,7 +23,6 @@ internal abstract class KtorApi {
                 useAlternativeNames = false
             })
         }
-
     }
 
     fun HttpRequestBuilder.pathUrl(path : String) {
