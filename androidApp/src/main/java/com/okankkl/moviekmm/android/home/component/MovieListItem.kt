@@ -1,6 +1,7 @@
 package com.okankkl.moviekmm.android.home.component
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -37,7 +38,8 @@ fun MovieListItem(
 
     Card(
         modifier = modifier
-            .height(220.dp),
+            .height(220.dp)
+            .clickable { onMovieClick(movie) },
         shape = RoundedCornerShape(7.dp)
     ){
         Column(

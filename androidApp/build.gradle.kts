@@ -53,6 +53,7 @@ dependencies {
     implementation("androidx.navigation:navigation-compose:${libs.versions.navVersion}")
     implementation ("androidx.swiperefreshlayout:swiperefreshlayout:1.2.0-alpha01")
     implementation ("androidx.compose.material:material:1.6.5")
+    //implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.0")
 
 
 

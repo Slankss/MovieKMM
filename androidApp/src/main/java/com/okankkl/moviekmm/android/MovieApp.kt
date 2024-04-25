@@ -15,14 +15,18 @@ import com.okankkl.moviekmm.android.common.Detail
 import com.okankkl.moviekmm.android.common.Home
 import com.okankkl.moviekmm.android.common.MovieAppBar
 import com.okankkl.moviekmm.android.common.movieDestinations
+import com.okankkl.moviekmm.android.detail.DetailScreen
+import com.okankkl.moviekmm.android.detail.DetailScreenState
+import com.okankkl.moviekmm.android.detail.DetailViewModel
 import com.okankkl.moviekmm.android.home.HomeScreen
 import com.okankkl.moviekmm.android.home.HomeViewModel
 import org.koin.androidx.compose.koinViewModel
+import org.koin.core.parameter.parametersOf
 
 @Composable
 fun MovieApp(){
 
-    val scaffolState = rememberScaffoldState()
+    val scaffoldState = rememberScaffoldState()
     val navController = rememberNavController()
 
     val backStackEntry by navController.currentBackStackEntryAsState()
@@ -34,7 +38,7 @@ fun MovieApp(){
     Scaffold(
         topBar = {
             MovieAppBar(
-                canNavigateBack = navController.currentBackStackEntry != null,
+                canNavigateBack = navController.previousBackStackEntry != null,
                 currentScreen = currentScreen) {
                 navController.navigateUp()
             }
@@ -54,14 +58,26 @@ fun MovieApp(){
                     loadNextMovies = {
                         homeViewModel.loadMovies(forceReload = it)
                     },
-                    navigateToDetail = {
-                        navController.navigate("${Detail.route}/{${it.id}}")
+                    navigateToDetail = { movie ->
+                        navController.navigate("${Detail.route}/${movie.id}")
                     }
                 )
             }
 
             composable(route = Detail.routeWithArgs, arguments = Detail.arguments){
                 val movieId = it.arguments?.getInt("movieId") ?: 0
+                val detailViewModel : DetailViewModel = koinViewModel(
+                    parameters = { parametersOf(movieId) }
+                )
+
+
+                DetailScreen(
+                    modifier = Modifier,
+                    state = detailViewModel.state,
+                    navigateToHome = {
+                        navController.navigate(Home.route)
+                    }
+                )
             }
         }
 

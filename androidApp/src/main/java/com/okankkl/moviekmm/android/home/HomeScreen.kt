@@ -87,9 +87,7 @@ fun HomeScreen(
                         verticalAlignment = Alignment.CenterVertically
                     ){
                         CircularProgressIndicator(color = Color.Red)
-
                     }
-
                 }
             }
         }

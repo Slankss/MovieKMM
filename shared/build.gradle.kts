@@ -3,7 +3,7 @@ plugins {
     alias(libs.plugins.androidLibrary)
 
     //Kotlinx Serialization
-    kotlin("plugin.serialization") version "1.8.0"
+    kotlin("plugin.serialization") version "1.9.22"
 }
 
 kotlin {

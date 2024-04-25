@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -17,6 +18,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 
 @Composable
 fun MovieAppBar(
@@ -38,20 +40,24 @@ fun MovieAppBar(
             verticalAlignment = Alignment.CenterVertically
         ){
             AnimatedVisibility(visible = canNavigateBack) {
-                Icon(
-                    imageVector = Icons.AutoMirrored.Filled.ArrowBack,
-                    contentDescription = null,
-                    tint = MaterialTheme.colorScheme.onBackground
-                )
+                IconButton(onClick = onNavigateBack){
+                    Icon(
+                        imageVector = Icons.AutoMirrored.Filled.ArrowBack,
+                        contentDescription = null,
+                        tint = MaterialTheme.colorScheme.onBackground
+                    )
+                }
+
             }
-            Spacer(modifier = modifier.width(24.dp))
+            Spacer(modifier = modifier.width(10.dp))
             Text(
                 text = currentScreen.title,
-                style = MaterialTheme.typography.headlineMedium,
-                modifier = modifier.padding(12.dp),
+                style = MaterialTheme.typography.headlineMedium.copy(
+                    fontSize = 20.sp
+                ),
+                modifier = modifier,
                 color = MaterialTheme.colorScheme.onSurface
             )
-
         }
     }
 
